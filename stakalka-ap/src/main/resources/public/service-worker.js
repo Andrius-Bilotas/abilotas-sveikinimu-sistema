@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/stakalka-ap/precache-manifest.5aa278d987a71e824ddaa3270955094e.js"
+  "/stakalka-ap/precache-manifest.d171c06d3875bc68da329c14ba4a114b.js"
 );
 
 self.addEventListener('message', (event) => {

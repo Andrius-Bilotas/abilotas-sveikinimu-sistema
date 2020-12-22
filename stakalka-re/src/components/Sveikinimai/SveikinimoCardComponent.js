@@ -10,7 +10,7 @@ function SveikinimoCardComponent({sveikinimas}) {
                 <p className="card-text"><b>Data: {sveikinimas.data}</b></p>
                 <p className="card-text">Laikas: {sveikinimas.laikas}</p>
                 <Link 
-                to={`/paslaugos/${sveikinimas.id}`} 
+                to={`/sveikinimai/${sveikinimas.id}`} 
                 className="btn btn-primary"
                 >
                     Plačiau

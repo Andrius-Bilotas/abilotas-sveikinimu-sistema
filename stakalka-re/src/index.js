@@ -6,6 +6,9 @@ import { Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import NavigationComponent from './components/Navigation/NavigationComponent';
 import SveikinimuSarasasContainer from './components/Sveikinimai/SveikinimuSarasasContainer';
+import VienoSveikinimoContainer from './components/Sveikinimai/VienoSveikinimoContainer';
+import SveikinimaiAdministrationContainer from './components/Sveikinimai/SveikinimaiAdministrationContainer';
+import NaujasSveikinimasContainer from './components/Sveikinimai/NaujasSveikinimasContainer';
 
 var NoMatch = (props) => {
   var goApp = () => props.history.push("/");
@@ -26,6 +29,9 @@ ReactDOM.render(
           <Switch>
             <Route exact path='/' component={SveikinimuSarasasContainer} />
             <Route exact path='/sveikinimai' component={SveikinimuSarasasContainer} />
+            <Route exact path='/sveikinimai/:id' component={VienoSveikinimoContainer} />
+            <Route exact path='/administracija' component={SveikinimaiAdministrationContainer} />
+            <Route exact path='/administracija/naujas' component={NaujasSveikinimasContainer} />
             <Route path="*" component={NoMatch} />
           </Switch>
     </BrowserRouter>

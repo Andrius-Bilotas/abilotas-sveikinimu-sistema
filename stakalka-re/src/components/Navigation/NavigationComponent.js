@@ -15,6 +15,9 @@ function NavigationComponent(props) {
                 <Link to='/' className="nav-link" style={{ color: 'black' }}>Sveikinimai</Link>
               </li>
               <li className="nav-item">
+                <Link to='/administracija' className="nav-link" style={{ color: 'black' }}>Sveikinimų administracija</Link>
+              </li>
+              <li className="nav-item">
                 <Link to='/vietos' className="nav-link" style={{ color: 'black' }}>Sveikinimų vietos</Link>
               </li>
             </ul>
