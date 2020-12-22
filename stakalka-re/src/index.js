@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PaslauguListContainer from './components/Paslaugos/PaslauguListContainer';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import NavigationComponent from './components/Navigation/NavigationComponent';
-import TeikejuListContainer from './components/Teikejai/TeikejuListContainer';
-import VienosPaslaugosContainer from './components/Paslaugos/Paslauga/VienosPaslaugosContainer';
+import SveikinimuSarasasContainer from './components/Sveikinimai/SveikinimuSarasasContainer';
 
 var NoMatch = (props) => {
   var goApp = () => props.history.push("/");
@@ -26,10 +24,8 @@ ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
         <NavigationComponent />
           <Switch>
-            <Route exact path='/' component={PaslauguListContainer} />
-            <Route exact path='/paslaugos' component={PaslauguListContainer} />
-            <Route exact path='/teikejai' component={TeikejuListContainer} />
-            <Route exact path='/paslaugos/:id' component={VienosPaslaugosContainer} />
+            <Route exact path='/' component={SveikinimuSarasasContainer} />
+            <Route exact path='/sveikinimai' component={SveikinimuSarasasContainer} />
             <Route path="*" component={NoMatch} />
           </Switch>
     </BrowserRouter>

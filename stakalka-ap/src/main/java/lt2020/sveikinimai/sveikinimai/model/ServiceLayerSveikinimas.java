@@ -1,17 +1,7 @@
 package lt2020.sveikinimai.sveikinimai.model;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class ServiceLayerSveikinimas {
 
-@Entity
-public class Sveikinimas {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String tekstas;
 	private String paveiksliukas;
@@ -19,15 +9,24 @@ public class Sveikinimas {
 	private String vardasPavarde;
 	private String data;
 	private String laikas;
-	@Enumerated(EnumType.STRING)
 	private Tipas tipas;
 
-	public Sveikinimas() {
+	public ServiceLayerSveikinimas(String tekstas, String paveiksliukas, String audio, String vardasPavarde, String data,
+			String laikas, Tipas tipas) {
+		super();
+		this.tekstas = tekstas;
+		this.paveiksliukas = paveiksliukas;
+		this.audio = audio;
+		this.vardasPavarde = vardasPavarde;
+		this.data = data;
+		this.laikas = laikas;
+		this.tipas = tipas;
 	}
 
-	public Sveikinimas(String tekstas, String paveiksliukas, String audio, String vardasPavarde, String data, String laikas,
-			Tipas tipas) {
+	public ServiceLayerSveikinimas(Long id, String tekstas, String paveiksliukas, String audio, String vardasPavarde,
+			String data, String laikas, Tipas tipas) {
 		super();
+		this.id = id;
 		this.tekstas = tekstas;
 		this.paveiksliukas = paveiksliukas;
 		this.audio = audio;

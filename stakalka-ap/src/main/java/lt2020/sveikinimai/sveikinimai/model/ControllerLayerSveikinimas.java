@@ -1,32 +1,20 @@
 package lt2020.sveikinimai.sveikinimai.model;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.sql.Time;
+import java.util.Date;
 
-@Entity
-public class Sveikinimas {
+public class ControllerLayerSveikinimas {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long id;
 	private String tekstas;
 	private String paveiksliukas;
 	private String audio;
 	private String vardasPavarde;
 	private String data;
 	private String laikas;
-	@Enumerated(EnumType.STRING)
-	private Tipas tipas;
+	private String tipas;
 
-	public Sveikinimas() {
-	}
-
-	public Sveikinimas(String tekstas, String paveiksliukas, String audio, String vardasPavarde, String data, String laikas,
-			Tipas tipas) {
+	public ControllerLayerSveikinimas(String tekstas, String paveiksliukas, String audio, String vardasPavarde,
+			String data, String laikas, String tipas) {
 		super();
 		this.tekstas = tekstas;
 		this.paveiksliukas = paveiksliukas;
@@ -35,14 +23,6 @@ public class Sveikinimas {
 		this.data = data;
 		this.laikas = laikas;
 		this.tipas = tipas;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getTekstas() {
@@ -93,11 +73,11 @@ public class Sveikinimas {
 		this.laikas = laikas;
 	}
 
-	public Tipas getTipas() {
+	public String getTipas() {
 		return tipas;
 	}
 
-	public void setTipas(Tipas tipas) {
+	public void setTipas(String tipas) {
 		this.tipas = tipas;
 	}
 

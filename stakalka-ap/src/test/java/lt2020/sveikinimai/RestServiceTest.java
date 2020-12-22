@@ -31,7 +31,7 @@ public class RestServiceTest {
     
     @Test
     public void testHello() throws Exception {
-        when().get("/api/paslaugos/test").then()
+        when().get("/api/sveikinimai/test").then()
                 .body(is("Hello"));
     }
   
