@@ -1,11 +1,16 @@
 package lt2020.sveikinimai.sveikinimai.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Sveikinimas {
@@ -21,6 +26,8 @@ public class Sveikinimas {
 	private String laikas;
 	@Enumerated(EnumType.STRING)
 	private Tipas tipas;
+	@OneToMany(mappedBy="sveikinimas", cascade = CascadeType.ALL)
+	private Set<SveikinimuVietos> sveikinimuVietos;
 
 	public Sveikinimas() {
 	}
@@ -35,6 +42,7 @@ public class Sveikinimas {
 		this.data = data;
 		this.laikas = laikas;
 		this.tipas = tipas;
+		this.sveikinimuVietos = new HashSet<>();
 	}
 
 	public Long getId() {
@@ -100,5 +108,15 @@ public class Sveikinimas {
 	public void setTipas(Tipas tipas) {
 		this.tipas = tipas;
 	}
+
+	public Set<SveikinimuVietos> getSveikinimuVietos() {
+		return sveikinimuVietos;
+	}
+
+	public void setSveikinimuVietos(Set<SveikinimuVietos> sveikinimuVietos) {
+		this.sveikinimuVietos = sveikinimuVietos;
+	}
+	
+	
 
 }
