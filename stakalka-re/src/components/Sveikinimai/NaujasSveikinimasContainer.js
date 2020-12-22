@@ -6,8 +6,13 @@ export default class NaujasSveikinimasContainer extends Component {
     constructor() {
         super();
         this.state = {
+            vardasPavarde: "",
             tekstas: "",
-
+            paveiksliukas: "",
+            data: "",
+            tipas: "",
+            laikas: "",
+            audio: ""
         };
     }
 
@@ -22,7 +27,7 @@ export default class NaujasSveikinimasContainer extends Component {
         console.log(this.state);
         axios.post('/stakalka-ap/api/sveikinimai', this.state)
             .then((response) => {
-                console.log(response);
+                this.props.history.push("/administracija");
             })
             .catch((error) => {
                 console.log(error);
@@ -32,7 +37,17 @@ export default class NaujasSveikinimasContainer extends Component {
     render() {
         return (
             <main className="container pt-5">
-                <NaujasSveikinimasComponent handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+                <NaujasSveikinimasComponent
+                 handleChange={this.handleChange} 
+                 handleSubmit={this.handleSubmit}
+                 vardasPavarde={this.state.vardasPavarde}
+                 tekstas={this.state.tekstas}
+                 paveiksliukas={this.state.paveiksliukas}
+                 data={this.state.data}
+                 tipas={this.state.tipas}
+                 laikas={this.state.laikas}
+                 audio={this.state.audio}
+                 />
             </main>
         );
     }

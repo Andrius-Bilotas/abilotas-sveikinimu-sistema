@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "72e961a89922f166cb3d5cf24383deaf",
+    "revision": "13e78e06fdfe6f80dbdfd02be8ae7e41",
     "url": "/stakalka-ap/index.html"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stakalka-ap/static/js/3.8cb5b3f3.chunk.js"
   },
   {
-    "revision": "9dff0c381a55bcfb4c66",
-    "url": "/stakalka-ap/static/js/main.2ca7c381.chunk.js"
+    "revision": "c8119469b0663789b74b",
+    "url": "/stakalka-ap/static/js/main.213a7497.chunk.js"
   },
   {
     "revision": "90b57637bd49b04b8118",
