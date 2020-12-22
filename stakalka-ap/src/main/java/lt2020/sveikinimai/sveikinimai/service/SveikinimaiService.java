@@ -38,4 +38,22 @@ public class SveikinimaiService {
 				sveikinimas.getVardasPavarde(), sveikinimas.getData(), sveikinimas.getLaikas(), sveikinimas.getTipas());
 	}
 	
+	@Transactional
+	public void updateSveikinimas(ServiceLayerSveikinimas sveikinimas) {
+		var updatedSveikinimas = sveikinimuDao.findById(sveikinimas.getId()).orElse(null);
+		updatedSveikinimas.setTekstas(sveikinimas.getTekstas());
+		updatedSveikinimas.setPaveiksliukas(sveikinimas.getPaveiksliukas());
+		updatedSveikinimas.setAudio(sveikinimas.getAudio());
+		updatedSveikinimas.setVardasPavarde(sveikinimas.getVardasPavarde());
+		updatedSveikinimas.setData(sveikinimas.getData());
+		updatedSveikinimas.setLaikas(sveikinimas.getLaikas());
+		updatedSveikinimas.setTipas(sveikinimas.getTipas());
+		sveikinimuDao.save(updatedSveikinimas);
+	}
+	
+	@Transactional
+	public void deleteSveikinimas(Long id) {
+		sveikinimuDao.deleteById(id);
+	}
+	
 }

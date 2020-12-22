@@ -38,6 +38,17 @@ public class SveikinimaiController {
 		return sService.getSingleSveikinimas(sveikinimoId);
 	}
 	
+	@RequestMapping(path ="/{sveikinimoId}", method = RequestMethod.DELETE)
+	public void deleteSveikinimas(@PathVariable final Long sveikinimoId) {
+		sService.deleteSveikinimas(sveikinimoId);
+	}
+	
+	@RequestMapping(path = "/{sveikinimoId}", method = RequestMethod.PUT)
+	public void updateSveikinimas(@PathVariable final Long sveikinimoId, @RequestBody final ControllerLayerSveikinimas sveikinimas) {
+		sService.updateSveikinimas(new ServiceLayerSveikinimas(sveikinimoId, sveikinimas.getTekstas(), sveikinimas.getPaveiksliukas(), sveikinimas.getAudio(), 
+				sveikinimas.getVardasPavarde(), sveikinimas.getData(), sveikinimas.getLaikas(), Tipas.valueOf(sveikinimas.getTipas().toUpperCase())));
+	}
+	
 	
 	@RequestMapping(path = "/test", method = RequestMethod.GET)
 	public String forTestPurposes() {
